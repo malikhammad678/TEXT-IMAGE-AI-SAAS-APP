@@ -7,11 +7,14 @@ export const AppContextProvider = ({ children }) => {
 
     const [user,setUser] = useState(null)
     const navigate = useNavigate()
+    const [openForm,setIsOpenForm] = useState(false)
 
     const value = {
         user,
         setUser,
-        navigate
+        navigate,
+        openForm,
+        setIsOpenForm
     };
 
     return <AppContext.Provider value={value}>

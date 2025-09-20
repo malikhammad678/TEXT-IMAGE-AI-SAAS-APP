@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
 import { assets } from '../assets/assets'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 const Navbar = () => {
 
-    const { user, setUser, navigate } = useAppContext()
+    const { user, setUser, navigate, setIsOpenForm } = useAppContext()
 
   return (
     <div className='flex items-center justify-between py-4'>
@@ -33,7 +32,7 @@ const Navbar = () => {
         :  
         <div className='flex items-center gap-2 sm:gap-5'>
             <p className='cursor-pointer' onClick={() => navigate("/buy-credits")}>Pricing</p>
-            <button onClick={() => setUser({ name:"Hammad", credits:"20" })} className='bg-zinc-800 text-white px-7 sm:px-10 py-2 text-sm rounded-full cursor-pointer '>Login</button>
+            <button onClick={() => setIsOpenForm(true)} className='bg-zinc-800 text-white px-7 sm:px-10 py-2 text-sm rounded-full cursor-pointer '>Login</button>
         </div>
         }
         
