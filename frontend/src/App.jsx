@@ -6,8 +6,8 @@ import Result from "./pages/Result"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Login from "./components/Login"
-import { useEffect } from "react"
 import { useAppContext } from "./context/AppContext"
+import { Toaster } from 'react-hot-toast'
 
 
 const App = () => {
@@ -21,9 +21,10 @@ const App = () => {
       <Routes>
       <Route path="/" element={ <Home /> } />
       <Route path="/buy-credits" element={ <BuyCredit /> } />
-      <Route path="/result" element={ user && <Result /> } />
+      <Route path="/result" element={ <Result /> } />
       </Routes>
       <Footer />
+      <Toaster position="bottom right" />
     </div>
   )
 }
