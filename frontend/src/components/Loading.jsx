@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
-import { useAppContext } from '../context/Appcontext';
-
+import { useNavigate } from 'react-router-dom'
 const Loading = () => {
 
-  const { navigate } = useAppContext()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const timeout = setTimeout(() => {
